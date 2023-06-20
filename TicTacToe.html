@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tic-Tac-Toe</title>
+</head>
+<style>
+    #mydiv {
+        font-size: 100px;
+    }
+    table {
+        border-collapse: collapse;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        font-weight: 500;
+        border-color: black;
+        border-width: thick;
+    }
+    td {
+        padding: 5px;
+        height: 150px;
+        width: 350px;
+        text-align: center;
+        font-size: 90px;
+        border-width: thick;
+    }
+
+    #smalltable{
+        background-color: white;
+        color: black;
+    }
+     #smalltable td:hover {
+        background-color: grey;
+    } 
+
+    body {
+        text-align: center;
+        font-family: cursive;
+        color: white;
+    }
+
+    .css-selector {
+        background: linear-gradient(270deg, #003eff, #4b77ff, #89a6ff);
+        background-size: 1000% 1000%;
+        -webkit-animation: AnimationName 10s ease infinite;
+        animation: AnimationName 10s ease infinite;
+    }
+
+    @-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+#PlayerSelect{
+    padding-top: 15px;
+    font-size: 25px;
+    border-color: white;
+}
+
+</style>
+
+<script src ="TicTacToeGame.js"></script>
+
+<body class ="css-selector" onload ="TicTacToeGame.js">
+    <audio onended = "ResetPage()" id = "WinAudio">
+        <source src = "Sounds/Cheer.mp3" type="audio/mpeg">
+            Audio Not Supported.
+    </audio>
+
+    <audio onended = "ResetPage()" id = "TieAudio">
+        <source src = "Sounds/Tie.mp3" type="audio/mpeg">
+            Audio Not Supported.
+    </audio>
+
+    <audio onended = "ResetPage()" id = "LoseAudio">
+        <source src = "Sounds/Lose.mp3" type="audio/mpeg">
+            Audio Not Supported.
+    </audio>
+
+    <audio id = "MusicAudio">
+        <source src = "Sounds/Music.mp3" type="audio/mpeg">
+            Audio Not Supported.
+    </audio>
+
+    <div id="mydiv">
+        Tic-Tac-Toe
+    </div>
+    <table id="bigtable">
+    <tr>
+            <td>
+            <table id="smalltable" border=1>
+            <tr>
+                <td onclick = "Events(11)"> 
+                    <img src ="Images/blank.png" width="50px" id = "cell11"  > 
+
+                </td>
+                <td onclick = "Events(12)"> 
+                    <img src ="Images/blank.png" width="50px" id = "cell12" > 
+                    
+                </td>
+                <td onclick = "Events(13)"> 
+                    <img src ="Images/blank.png" width="50px" id = "cell13" > 
+                    
+                </td>
+            </tr>
+            <tr>
+                <td onclick = "Events(21)"> 
+                    <img src ="Images/blank.png" width="50px" id = "cell21" > 
+                    
+                </td>
+                <td onclick = "Events(22)"> 
+                    <img src ="Images/blank.png" width="50px" id = "cell22" > 
+                    
+                </td>
+                <td onclick = "Events(23)">  
+                    <img src ="Images/blank.png" width="50px" id = "cell23" > 
+                    
+                </td>
+            </tr>
+            <tr>
+                <td onclick = "Events(31)">  
+                    <img src ="Images/blank.png" width="50px" id = "cell31" > 
+                    
+                </td>
+                <td onclick = "Events(32)"> 
+                    <img src ="Images/blank.png" width="50px" id = "cell32" > 
+                    
+                </td>
+                <td onclick = "Events(33)">
+                    <img src ="Images/blank.png" width="50px" id = "cell33" > 
+                    
+                </td>
+            </tr>
+            </table>
+        </td>
+    </tr>
+    </table>
+    <div id = "PlayerSelect">
+        <table border = 1 id = "PlayerSelect">
+            <tr colspan = "2">
+                Please Select:              
+            </tr>
+            <tr>
+                <td onclick= "Events(00)">
+                    <img src ="Images/x.png" width="50px" > 
+                    <input type = "hidden" id = "memory" value = "X">
+                </td>
+                <td onclick= "Events(01)">
+                    <img src ="Images/o.png" width="50px" > 
+                    <input type = "hidden" id = "memory" value = "O">
+                </td>
+            </tr>
+        </table>
+       
+    </div>
+</body>
+</html>
